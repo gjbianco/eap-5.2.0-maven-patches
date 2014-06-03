@@ -56,7 +56,7 @@ installPom org.drools drools-multiproject $VERSION_P02
 installPom org.drools droolsjbpm-tools $VERSION_P02
 installPom org.drools droolsjbpm-integration $VERSION_P02
 installPom org.drools guvnor $VERSION_P02
-installPom org.jbpm  $VERSION_P02
+installPom org.jbpm jbpm $VERSION_P02
 
 echo Installing P04 parent POMs...
 echo
@@ -81,7 +81,7 @@ installPom org.jbpm jbpm $VERSION_P05
 echo Installing Drools binaries...
 echo
 # droolsjbpm-knowledge
-installUpdatedBinary org.drools knowledge-api $VERSION_02
+installUpdatedBinary org.drools knowledge-api $VERSION_P02
 # drools-multiproject
 installUpdatedBinary org.drools drools-core $VERSION_P05
 installUpdatedBinary org.drools drools-compiler $VERSION_P05
