@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>droolsjbpm-parent</artifactId>
-    <version>5.3.1.BRMS-P04</version>
+    <version>5.3.1.BRMS-P05</version>
     <!-- relativePath causes out-of-date problems on hudson slaves -->
     <!--<relativePath>../droolsjbpm-build-bootstrap/pom.xml</relativePath>-->
   </parent>
@@ -14,7 +14,8 @@
   <groupId>org.drools</groupId>
   <artifactId>droolsjbpm-integration</artifactId>
   <packaging>pom</packaging>
-
+  <version>5.3.1.BRMS-P02</version>
+  
   <name>Drools and jBPM integration multiproject</name>
   <description>
     Drools and jBPM integration with seam, spring, camel, ...
