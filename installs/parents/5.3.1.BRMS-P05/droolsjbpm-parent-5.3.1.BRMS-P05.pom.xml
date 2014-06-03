@@ -15,7 +15,7 @@
   <!-- major.minor.micro.Final -->
   <!-- For example: 1.2.3 without the suffix ".Final" corrupts the OSGi eclipse updatesite -->
   <!-- For example: 1.2.3.M2 corrupts the OSGi eclipse updatesite update order -->
-  <version>5.3.1.BRMS-P04</version>
+  <version>5.3.1.BRMS-P05</version>
 
   <name>Drools and jBPM build bootstrap (parent pom)</name>
   <description>
@@ -40,11 +40,13 @@
     <drools.version>5.3.1.BRMS</drools.version>
     <drools.version.P02>5.3.1.BRMS-P02</drools.version.P02>
     <drools.version.P04>5.3.1.BRMS-P04</drools.version.P04>
+    <drools.version.P05>5.3.1.BRMS-P05</drools.version.P04>
     <drools.osgi.version>5.3.1.BRMS</drools.osgi.version>
     <drools-planner.version>${drools.version}</drools-planner.version>
     <jbpm.version>5.3.1.BRMS</jbpm.version>
     <jbpm.version.P02>5.3.1.BRMS-P02</jbpm.version.P02>
     <jbpm.version.P04>5.3.1.BRMS-P04</jbpm.version.P04>
+    <jbpm.version.P05>5.3.1.BRMS-P05</jbpm.version.P04>
     <jbpm.osgi.version>5.3.1.BRMS</jbpm.osgi.version>
     <droolsjbpm-integration.version>${drools.version}</droolsjbpm-integration.version>
     <guvnor.version>${drools.version}</guvnor.version>
@@ -546,30 +548,30 @@
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-core</artifactId>
-        <version>${drools.version.P04}</version>
+        <version>${drools.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-core</artifactId>
-        <version>${drools.version.P04}</version>
+        <version>${drools.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-core</artifactId>
-        <version>${drools.version.P04}</version>
+        <version>${drools.version.P05}</version>
         <type>test-jar</type>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-compiler</artifactId>
-        <version>${drools.version.P04}</version>
+        <version>${drools.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-compiler</artifactId>
-        <version>${drools.version.P04}</version>
+        <version>${drools.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
@@ -608,7 +610,7 @@
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-persistence-jpa</artifactId>
-        <version>${drools.version.P04}</version>
+        <version>${drools.version.P05}</version>
         <exclusions>
           <exclusion>
             <groupId>org.hibernate</groupId>
@@ -744,12 +746,12 @@
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-flow</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-flow</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
@@ -808,12 +810,12 @@
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-bpmn2</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-bpmn2</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
@@ -841,18 +843,18 @@
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-human-task</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-human-task</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
         <groupId>org.jbpm</groupId>
         <artifactId>jbpm-human-task</artifactId>
-        <version>${jbpm.version.P04}</version>
+        <version>${jbpm.version.P05}</version>
         <type>test-jar</type>
         <scope>test</scope>
       </dependency>
@@ -1014,12 +1016,12 @@
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-spring</artifactId>
-        <version>${droolsjbpm-integration.version}</version>
+        <version>${drools.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>drools-spring</artifactId>
-        <version>${droolsjbpm-integration.version}</version>
+        <version>${drools.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
@@ -1089,12 +1091,12 @@
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>guvnor-repository</artifactId>
-        <version>${guvnor.version}</version>
+        <version>${drools.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>guvnor-repository</artifactId>
-        <version>${guvnor.version}</version>
+        <version>${drools.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <dependency>
@@ -1133,12 +1135,12 @@
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>droolsjbpm-ide-common</artifactId>
-        <version>${drools.version.P02}</version>
+        <version>${drools.version.P05}</version>
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
         <artifactId>droolsjbpm-ide-common</artifactId>
-        <version>${drools.version.P02}</version>
+        <version>${drools.version.P05}</version>
         <classifier>sources</classifier>
       </dependency>
       <!-- JBRULES-2707 Split up guvnor-webapp into guvnor-gwt-client and guvnor-webapp -->
