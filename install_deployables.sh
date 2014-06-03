@@ -10,30 +10,13 @@ VERSION_P04=5.3.1.BRMS-P04
 command -v mvn -q >/dev/null 2>&1 || { echo >&2 "Maven is required but not installed yet... aborting."; exit 1; }
 
 installPom() {
-    mvn -q install:install-file -Dfile=../$SRC_DIR/parents/$VERSION/$2-$VERSION.pom.xml -DgroupId=$1 -DartifactId=$2 -Dversion=$VERSION -Dpackaging=pom;
+    mvn -q install:install-file -Dfile=../$SRC_DIR/parents/$3/$2-$3.pom.xml -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=pom;
 }
 
-installPom_P02() {
-    mvn -q install:install-file -Dfile=../$SRC_DIR/parents/$VERSION_P02/$2-$VERSION_P02.pom.xml -DgroupId=$1 -DartifactId=$2 -Dversion=$VERSION_P02 -Dpackaging=pom;
-}
-
-installPom_P04() {
-    mvn -q install:install-file -Dfile=../$SRC_DIR/parents/$VERSION_P04/$2-$VERSION_P04.pom.xml -DgroupId=$1 -DartifactId=$2 -Dversion=$VERSION_P04 -Dpackaging=pom;
-}
 
 installBinary() {
-    unzip -q $2-$VERSION.jar META-INF/maven/$1/$2/pom.xml;
-    mvn -q install:install-file -DpomFile=./META-INF/maven/$1/$2/pom.xml -Dfile=$2-$VERSION.jar -DgroupId=$1 -DartifactId=$2 -Dversion=$VERSION -Dpackaging=jar;
-}
-
-installBinary_P02() {
-    unzip -q $UPDATE_DIR/$2-$VERSION_P02.jar META-INF/maven/$1/$2/pom.xml;
-    mvn -q install:install-file -DpomFile=./META-INF/maven/$1/$2/pom.xml -Dfile=$UPDATE_DIR/$2-$VERSION_P02.jar -DgroupId=$1 -DartifactId=$2 -Dversion=$VERSION_P02 -Dpackaging=jar;
-}
-
-installBinary_P04() {
-    unzip -q $UPDATE_DIR/$2-$VERSION_P04.jar META-INF/maven/$1/$2/pom.xml;
-    mvn -q install:install-file -DpomFile=./META-INF/maven/$1/$2/pom.xml -Dfile=$UPDATE_DIR/$2-$VERSION_P04.jar -DgroupId=$1 -DartifactId=$2 -Dversion=$VERSION_P04 -Dpackaging=jar;
+    unzip -q $2-$3.jar META-INF/maven/$1/$2/pom.xml;
+    mvn -q install:install-file -DpomFile=./META-INF/maven/$1/$2/pom.xml -Dfile=$2-$3.jar -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=jar;
 }
 
 echo
@@ -51,64 +34,64 @@ cd binaries
 echo Installing parent POMs...
 echo
 #installPom org.drools droolsjbpm-parent
-installPom org.drools drools-container
-installPom org.drools droolsjbpm-knowledge
-installPom org.drools drools-multiproject
-installPom org.drools droolsjbpm-tools
-installPom org.drools droolsjbpm-integration
-installPom org.drools guvnor
-installPom org.jbpm jbpm
+installPom org.drools drools-container $VERSION
+installPom org.drools droolsjbpm-knowledge $VERSION
+installPom org.drools drools-multiproject $VERSION
+installPom org.drools droolsjbpm-tools $VERSION
+installPom org.drools droolsjbpm-integration $VERSION
+installPom org.drools guvnor $VERSION
+installPom org.jbpm jbpm $VERSION
 
 echo Installing P02 parent POMs...
 echo
 #installPom org.drools droolsjbpm-parent
-installPom_P02 org.drools droolsjbpm-knowledge
-installPom_P02 org.drools drools-multiproject
-installPom_P02 org.drools droolsjbpm-tools
-installPom_P02 org.drools droolsjbpm-integration
-installPom_P02 org.drools guvnor
-installPom_P02 org.jbpm jbpm
+installPom org.drools droolsjbpm-knowledge $VERSION_P02
+installPom org.drools drools-multiproject $VERSION_P02
+installPom org.drools droolsjbpm-tools $VERSION_P02
+installPom org.drools droolsjbpm-integration $VERSION_P02
+installPom org.drools guvnor $VERSION_P02
+installPom org.jbpm  $VERSION_P02
 
 echo Installing P04 parent POMs...
 echo
-installPom_P04 org.drools droolsjbpm-parent
-installPom_P04 org.drools droolsjbpm-knowledge
-installPom_P04 org.drools drools-multiproject
-installPom_P04 org.drools droolsjbpm-tools
-installPom_P04 org.drools droolsjbpm-integration
-installPom_P04 org.drools guvnor
-installPom_P04 org.jbpm jbpm
+installPom org.drools droolsjbpm-parent $VERSION_P04
+installPom org.drools droolsjbpm-knowledge $VERSION_P04
+installPom org.drools drools-multiproject $VERSION_P04
+installPom org.drools droolsjbpm-tools $VERSION_P04
+installPom org.drools droolsjbpm-integration $VERSION_P04
+installPom org.drools guvnor $VERSION_P04
+installPom org.jbpm jbpm $VERSION_P04
 
 echo Installing Drools binaries...
 echo
 # droolsjbpm-knowledge
-installBinary_P02 org.drools knowledge-api
+installBinary org.drools knowledge-api
 # drools-multiproject
-installBinary_P04 org.drools drools-core
-installBinary_P04 org.drools drools-compiler
-installBinary_P02 org.drools drools-jsr94
-installBinary_P02 org.drools drools-verifier
-installBinary_P04 org.drools drools-persistence-jpa
-installBinary_P02 org.drools drools-templates
-installBinary_P02 org.drools drools-decisiontables
+installBinary org.drools drools-core $VERSION_P04
+installBinary org.drools drools-compiler $VERSION_P04
+installBinary org.drools drools-jsr94  $VERSION_P02
+installBinary org.drools drools-verifier $VERSION_P02
+installBinary org.drools drools-persistence-jpa $VERSION_P04
+installBinary org.drools drools-templates $VERSION_P02
+installBinary org.drools drools-decisiontables $VERSION_P02
 # droolsjbpm-tools
 installBinary org.drools drools-ant
 # droolsjbpm-integration
 installBinary org.drools drools-camel
 installBinary org.drools drools-spring
 # guvnor
-installBinary_P02 org.drools droolsjbpm-ide-common
+installBinary org.drools droolsjbpm-ide-common $VERSION_P02
 
 echo Installing jBPM binaries...
 echo
-installBinary_P04 org.jbpm jbpm-flow
-installBinary_P04 org.jbpm jbpm-flow-builder
-installBinary_P02 org.jbpm jbpm-persistence-jpa
-installBinary_P02 org.jbpm jbpm-bam
-installBinary_P04 org.jbpm jbpm-bpmn2
-installBinary_P02 org.jbpm jbpm-workitems
-installBinary_P04 org.jbpm jbpm-human-task
-installBinary_P04 org.jbpm jbpm-test
+installBinary org.jbpm jbpm-flow $VERSION_P04
+installBinary org.jbpm jbpm-flow-builder $VERSION_P04
+installBinary org.jbpm jbpm-persistence-jpa $VERSION_P02
+installBinary org.jbpm jbpm-bam $VERSION_P02
+installBinary org.jbpm jbpm-bpmn2 $VERSION_P04
+installBinary org.jbpm jbpm-workitems $VERSION_P02
+installBinary org.jbpm jbpm-human-task $VERSION_P04
+installBinary org.jbpm jbpm-test $VERSION_P04
 
 cd ..
 rm -rf binaries
