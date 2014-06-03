@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SRC_DIR=./installs
 BRMS=brms-p-5.3.1.GA-deployable-ee6.zip
 UPDATE=BZ-986451.zip
