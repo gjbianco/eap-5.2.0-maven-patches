@@ -16,12 +16,12 @@ installPom() {
 
 
 installBinary() {
-    unzip -q -f $2-$3.jar META-INF/maven/$1/$2/pom.xml;
+    unzip -q -u $2-$3.jar META-INF/maven/$1/$2/pom.xml;
     mvn -q install:install-file -DpomFile=./META-INF/maven/$1/$2/pom.xml -Dfile=$2-$3.jar -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=jar;
 }
 
 installUpdatedBinary() {
-    unzip -q -f $UPDATE_DIR/$2-$3.jar META-INF/maven/$1/$2/pom.xml;
+    unzip -q -u $UPDATE_DIR/$2-$3.jar META-INF/maven/$1/$2/pom.xml;
     mvn -q install:install-file -DpomFile=./META-INF/maven/$1/$2/pom.xml -Dfile=$UPDATE_DIR/$2-$3.jar -DgroupId=$1 -DartifactId=$2 -Dversion=$3 -Dpackaging=jar;
 
 }
