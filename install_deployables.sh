@@ -108,6 +108,7 @@ installUpdatedBinary org.jbpm jbpm-bpmn2 $VERSION_P05
 installUpdatedBinary org.jbpm jbpm-workitems $VERSION_P02
 installUpdatedBinary org.jbpm jbpm-human-task $VERSION_P05
 installUpdatedBinary org.jbpm jbpm-test $VERSION_P04
+installBinary org.jbpm jbpm-workitems $VERSION
 
 cd ..
 rm -rf binaries
