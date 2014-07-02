@@ -40,13 +40,13 @@
     <drools.version>5.3.1.BRMS</drools.version>
     <drools.version.P02>5.3.1.BRMS-P02</drools.version.P02>
     <drools.version.P04>5.3.1.BRMS-P04</drools.version.P04>
-    <drools.version.P05>5.3.1.BRMS-P05</drools.version.P04>
+    <drools.version.P05>5.3.1.BRMS-P05</drools.version.P05>
     <drools.osgi.version>5.3.1.BRMS</drools.osgi.version>
     <drools-planner.version>${drools.version}</drools-planner.version>
     <jbpm.version>5.3.1.BRMS</jbpm.version>
     <jbpm.version.P02>5.3.1.BRMS-P02</jbpm.version.P02>
     <jbpm.version.P04>5.3.1.BRMS-P04</jbpm.version.P04>
-    <jbpm.version.P05>5.3.1.BRMS-P05</jbpm.version.P04>
+    <jbpm.version.P05>5.3.1.BRMS-P05</jbpm.version.P05>
     <jbpm.osgi.version>5.3.1.BRMS</jbpm.osgi.version>
     <droolsjbpm-integration.version>${drools.version}</droolsjbpm-integration.version>
     <guvnor.version>${drools.version}</guvnor.version>
