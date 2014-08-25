@@ -2,6 +2,7 @@
 SRC_DIR=./installs
 BRMS=brms-p-5.2.0.GA-deployable.zip
 VERSION=5.2.0.BRMS
+$MVEL_VERSION=2.1.Beta6
 
 command -v mvn -q >/dev/null 2>&1 || { echo >&2 "Maven is required but not installed yet... aborting."; exit 1; }
 
@@ -58,6 +59,9 @@ installBinary org.drools drools-ant $VERSION
 installBinary org.drools drools-camel $VERSION
 # guvnor
 installBinary org.drools droolsjbpm-ide-common $VERSION
+
+#special mvel2 version
+installBinary org.mvel mvel2 $MVEL_VERSION
 
 echo Installing jBPM binaries...
 echo
