@@ -6,20 +6,41 @@
   <parent>
     <groupId>org.drools</groupId>
     <artifactId>droolsjbpm-parent</artifactId>
-    <version>5.3.1.BRMS-P05</version>
-    <!-- relativePath causes out-of-date problems on hudson slaves -->
-    <!--<relativePath>../droolsjbpm-build-bootstrap/pom.xml</relativePath>-->
+    <version>5.2.0.BRMS</version>
   </parent>
 
   <groupId>org.drools</groupId>
   <artifactId>droolsjbpm-tools</artifactId>
   <packaging>pom</packaging>
-  <version>5.3.1.BRMS-P04</version>
 
   <name>Drools and jBPM Tools multiproject</name>
   <description>
     Maven, ant, eclipse, ... plugins and support for Drools, jBPM and Guvnor functionality
   </description>
+
+  <repositories>
+    <!-- Bootstrap repository to locate the parent pom when the parent pom has not been build locally. -->
+    <repository>
+      <id>jboss-public-repository-group</id>
+      <name>JBoss Public Repository Group</name>
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <scm>
+    <connection>scm:git:git@github.com:droolsjbpm/droolsjbpm-tools.git</connection>
+    <developerConnection>scm:git:git@github.com:droolsjbpm/droolsjbpm-tools.git</developerConnection>
+    <url>https://github.com/droolsjbpm/droolsjbpm-tools</url>
+  </scm>
 
   <modules>
     <module>drools-ant</module>
